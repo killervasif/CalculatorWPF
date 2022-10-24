@@ -6,20 +6,160 @@
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
         Title="Calculator" Height="530" Width="318" Background="Gray">
-    <Grid>
+        <Grid>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="2*"/>
-            <RowDefinition Height="0.6*"/>
-            <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="3">
+
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <DockPanel>
+
+                <Button 
+                    Click="ButtonUnidentified_Click"
+                    BorderThickness="0"
+                    Width="40" 
+                    DockPanel.Dock="Left">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/hamburger.png"/>
+                    </Button.Background>
+                </Button>
+
+                <Button 
+                    Click="ButtonUnidentified_Click"
+                    Width="40" DockPanel.Dock="Right" 
+                    BorderThickness="0" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="/history.png"/>
+                    </Button.Background>
+                </Button>
+
+                <Label Padding="4"
+                    HorizontalContentAlignment="Left" 
+                    VerticalContentAlignment="Center"
+                    FontSize="25"
+                    FontWeight="DemiBold"
+                       >Standart
+                </Label>
+
+            </DockPanel>
+
+
+            <TextBox 
+                Name="txt"
+                Text="0"
+                KeyUp="txt_KeyUp"
+                MaxLength="20"
+                BorderThickness="0"
+                IsReadOnly="True"
+                FontSize="45"
+                FlowDirection="LeftToRight" 
+                TextAlignment="Right" 
+                VerticalContentAlignment="Center"
+                Background="Transparent" 
+                Grid.Row="1">
+            </TextBox>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    Click="ButtonUnidentified_Click"
+                    BorderThickness="0"
+                    Background="Transparent"
+                    Margin="2"
+                    HorizontalContentAlignment="Center"
+                       VerticalContentAlignment="Center"
+                       FontSize="16"
+                       FontWeight="Regular"
+                       >MC</Button>
+
+                <Button 
+                    Click="ButtonUnidentified_Click"
+                    BorderThickness="0"
+                    Background="Transparent"
+                    Margin="2"
+                    HorizontalContentAlignment="Center"
+                       VerticalContentAlignment="Center"
+                       FontSize="16"
+                       FontWeight="Regular"
+                       Grid.Column="1"
+                       >MR</Button>
+
+                <Button
+                    Click="ButtonUnidentified_Click"
+                    BorderThickness="0"
+                    Background="Transparent"
+                    Margin="2"
+                    HorizontalContentAlignment="Center"
+                       VerticalContentAlignment="Center"
+                       FontSize="16"
+                       FontWeight="Regular"
+                       Grid.Column="2"
+                       >M+</Button>
+
+                <Button
+                    Click="ButtonUnidentified_Click"
+                    BorderThickness="0"
+                    Background="Transparent"
+                    Margin="2"
+                    HorizontalContentAlignment="Center"
+                       VerticalContentAlignment="Center"
+                       FontSize="16"
+                       FontWeight="Regular"
+                       Grid.Column="3"
+                       >M-</Button>
+
+                <Button
+                    Click="ButtonUnidentified_Click"
+                    BorderThickness="0"
+                    Background="Transparent"
+                    Margin="2"
+                    HorizontalContentAlignment="Center"
+                       VerticalContentAlignment="Center"
+                       FontSize="16"
+                       FontWeight="Regular"
+                       Grid.Column="4"
+                       >MS</Button>
+
+                <Button
+                    Click="ButtonUnidentified_Click"
+                    BorderThickness="0"
+                    Background="Transparent"
+                    Margin="2"
+                       HorizontalContentAlignment="Center"
+                       VerticalContentAlignment="Center"
+                       FontSize="16"
+                       FontWeight="Regular"
+                       Grid.Column="5"
+                       >M^</Button>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1" >
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -28,6 +168,522 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
+
+
+            <Button 
+                Click="ButtonUnidentified_Click"
+                Padding="0 0 3 10"
+                FontSize="30"
+                BorderThickness="0"
+                Margin="2">%
+
+                <Button.Background>
+                    <SolidColorBrush>
+                        <SolidColorBrush.Color>
+                            <Color>
+                                <Color.A>225</Color.A>
+                                <Color.R>225</Color.R>
+                                <Color.G>225</Color.G>
+                                <Color.B>225</Color.B>
+                            </Color>
+                        </SolidColorBrush.Color>
+                    </SolidColorBrush>
+                </Button.Background>
+
+            </Button>
+
+
+            <Button 
+                Click="ButtonSymbol_Click"
+                Grid.Column="1"
+                Padding="0 0 3 10"
+                FontSize="30"
+                BorderThickness="0"
+                Margin="2">CE
+
+                <Button.Background>
+                    <SolidColorBrush>
+                        <SolidColorBrush.Color>
+                            <Color>
+                                <Color.A>225</Color.A>
+                                <Color.R>225</Color.R>
+                                <Color.G>225</Color.G>
+                                <Color.B>225</Color.B>
+                            </Color>
+                        </SolidColorBrush.Color>
+                    </SolidColorBrush>
+                </Button.Background>
+            </Button>
+
+            <Button 
+                Click="ButtonSymbol_Click"
+                Grid.Column="2"
+                Padding="0 0 3 10"
+                FontSize="30"
+                BorderThickness="0"
+                Margin="2">C
+
+                <Button.Background>
+                    <SolidColorBrush>
+                        <SolidColorBrush.Color>
+                            <Color>
+                                <Color.A>225</Color.A>
+                                <Color.R>225</Color.R>
+                                <Color.G>225</Color.G>
+                                <Color.B>225</Color.B>
+                            </Color>
+                        </SolidColorBrush.Color>
+                    </SolidColorBrush>
+                </Button.Background>
+            </Button>
+
+            <RepeatButton
+                Click="ButtonClear_Click"
+                Grid.Column="3"
+                Padding="0 0 3 10"
+                FontSize="30"
+                BorderThickness="0"
+                Margin="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <RepeatButton.Background>
+                    <ImageBrush Stretch="Uniform" TileMode="Tile" ImageSource="/delete.png"/>
+                </RepeatButton.Background>
+            </RepeatButton>
+
+
+            <Button 
+                Click="ButtonOperation_Click"
+                Grid.Row="1"
+                Padding="0 0 3 10"
+                FontSize="30"
+                BorderThickness="0"
+                Margin="2">1/x
+                <Button.Background>
+                    <SolidColorBrush>
+                        <SolidColorBrush.Color>
+                            <Color>
+                                <Color.A>225</Color.A>
+                                <Color.R>225</Color.R>
+                                <Color.G>225</Color.G>
+                                <Color.B>225</Color.B>
+                            </Color>
+                        </SolidColorBrush.Color>
+                    </SolidColorBrush>
+                </Button.Background>
+            </Button>
+
+            <Button 
+                Click="ButtonOperation_Click"
+                Grid.Row="1"
+                Grid.Column="1"
+                Padding="0 0 3 10"
+                FontSize="30"
+                BorderThickness="0"
+                Margin="2">x²
+                <Button.Background>
+                    <SolidColorBrush>
+                        <SolidColorBrush.Color>
+                            <Color>
+                                <Color.A>225</Color.A>
+                                <Color.R>225</Color.R>
+                                <Color.G>225</Color.G>
+                                <Color.B>225</Color.B>
+                            </Color>
+                        </SolidColorBrush.Color>
+                    </SolidColorBrush>
+                </Button.Background>
+            </Button>
+
+            <Button 
+                Click="ButtonOperation_Click"
+                Grid.Row="1"
+                Grid.Column="2"
+                Padding="0 0 3 10"
+                FontSize="30"
+                BorderThickness="0"
+                Margin="2">√x
+                <Button.Background>
+                    <SolidColorBrush>
+                        <SolidColorBrush.Color>
+                            <Color>
+                                <Color.A>225</Color.A>
+                                <Color.R>225</Color.R>
+                                <Color.G>225</Color.G>
+                                <Color.B>225</Color.B>
+                            </Color>
+                        </SolidColorBrush.Color>
+                    </SolidColorBrush>
+                </Button.Background>
+            </Button>
+
+            <Button 
+                Click="ButtonSymbol_Click"
+                Grid.Row="1"
+                Grid.Column="3"
+                Padding="0 0 3 10"
+                FontSize="40"
+                BorderThickness="0"
+                Margin="2">/
+                <Button.Background>
+                    <SolidColorBrush>
+                        <SolidColorBrush.Color>
+                            <Color>
+                                <Color.A>225</Color.A>
+                                <Color.R>225</Color.R>
+                                <Color.G>225</Color.G>
+                                <Color.B>225</Color.B>
+                            </Color>
+                        </SolidColorBrush.Color>
+                    </SolidColorBrush>
+                </Button.Background>
+            </Button>
+
+
+            <Button 
+                Click="ButtonNumber_Click"
+                Grid.Row="2"
+                Padding="0 0 3 10"
+                FontSize="30"
+                BorderThickness="0"
+                Margin="2">1
+                <Button.Background>
+                    <SolidColorBrush>
+                        <SolidColorBrush.Color>
+                            <Color>
+                                <Color.A>250</Color.A>
+                                <Color.R>250</Color.R>
+                                <Color.G>250</Color.G>
+                                <Color.B>250</Color.B>
+                            </Color>
+                        </SolidColorBrush.Color>
+                    </SolidColorBrush>
+                </Button.Background>
+            </Button>
+
+            <Button 
+                Click="ButtonNumber_Click"
+                Grid.Row="2"
+                Grid.Column="1"
+                Padding="0 0 3 10"
+                FontSize="30"
+                BorderThickness="0"
+                Margin="2">2
+                <Button.Background>
+                    <SolidColorBrush>
+                        <SolidColorBrush.Color>
+                            <Color>
+                                <Color.A>250</Color.A>
+                                <Color.R>250</Color.R>
+                                <Color.G>250</Color.G>
+                                <Color.B>250</Color.B>
+                            </Color>
+                        </SolidColorBrush.Color>
+                    </SolidColorBrush>
+                </Button.Background>
+            </Button>
+
+            <Button 
+                Click="ButtonNumber_Click"
+                Grid.Row="2"
+                Grid.Column="2"
+                Padding="0 0 3 10"
+                FontSize="30"
+                BorderThickness="0"
+                Margin="2">3
+                <Button.Background>
+                    <SolidColorBrush>
+                        <SolidColorBrush.Color>
+                            <Color>
+                                <Color.A>250</Color.A>
+                                <Color.R>250</Color.R>
+                                <Color.G>250</Color.G>
+                                <Color.B>250</Color.B>
+                            </Color>
+                        </SolidColorBrush.Color>
+                    </SolidColorBrush>
+                </Button.Background>
+            </Button>
+
+
+            <Button 
+                Click="ButtonSymbol_Click"
+                Grid.Row="2"
+                Grid.Column="3"
+                Padding="0 0 3 10"
+                FontSize="40"
+                BorderThickness="0"
+                Margin="2">*
+                <Button.Background>
+                    <SolidColorBrush>
+                        <SolidColorBrush.Color>
+                            <Color>
+                                <Color.A>225</Color.A>
+                                <Color.R>225</Color.R>
+                                <Color.G>225</Color.G>
+                                <Color.B>225</Color.B>
+                            </Color>
+                        </SolidColorBrush.Color>
+                    </SolidColorBrush>
+                </Button.Background>
+            </Button>
+
+            <Button 
+                Click="ButtonNumber_Click"
+                Grid.Row="3"
+                Padding="0 0 3 10"
+                FontSize="30"
+                BorderThickness="0"
+                Margin="2">4
+                <Button.Background>
+                    <SolidColorBrush>
+                        <SolidColorBrush.Color>
+                            <Color>
+                                <Color.A>250</Color.A>
+                                <Color.R>250</Color.R>
+                                <Color.G>250</Color.G>
+                                <Color.B>250</Color.B>
+                            </Color>
+                        </SolidColorBrush.Color>
+                    </SolidColorBrush>
+                </Button.Background>
+            </Button>
+
+            <Button 
+                Click="ButtonNumber_Click"
+                Grid.Row="3"
+                Grid.Column="1"
+                Padding="0 0 3 10"
+                FontSize="30"
+                BorderThickness="0"
+                Margin="2">5
+                <Button.Background>
+                    <SolidColorBrush>
+                        <SolidColorBrush.Color>
+                            <Color>
+                                <Color.A>250</Color.A>
+                                <Color.R>250</Color.R>
+                                <Color.G>250</Color.G>
+                                <Color.B>250</Color.B>
+                            </Color>
+                        </SolidColorBrush.Color>
+                    </SolidColorBrush>
+                </Button.Background>
+            </Button>
+
+            <Button 
+                Click="ButtonNumber_Click"
+                Grid.Row="3"
+                Grid.Column="2"
+                Padding="0 0 3 10"
+                FontSize="30"
+                BorderThickness="0"
+                Margin="2">6
+                <Button.Background>
+                    <SolidColorBrush>
+                        <SolidColorBrush.Color>
+                            <Color>
+                                <Color.A>250</Color.A>
+                                <Color.R>250</Color.R>
+                                <Color.G>250</Color.G>
+                                <Color.B>250</Color.B>
+                            </Color>
+                        </SolidColorBrush.Color>
+                    </SolidColorBrush>
+                </Button.Background>
+            </Button>
+
+            <Button 
+                Click="ButtonSymbol_Click"
+                Grid.Row="3"
+                Grid.Column="3"
+                Padding="0 0 3 10"
+                FontSize="40"
+                BorderThickness="0"
+                Margin="2">-
+                <Button.Background>
+                    <SolidColorBrush>
+                        <SolidColorBrush.Color>
+                            <Color>
+                                <Color.A>225</Color.A>
+                                <Color.R>225</Color.R>
+                                <Color.G>225</Color.G>
+                                <Color.B>225</Color.B>
+                            </Color>
+                        </SolidColorBrush.Color>
+                    </SolidColorBrush>
+                </Button.Background>
+            </Button>
+
+            <Button 
+                Click="ButtonNumber_Click"
+                Grid.Row="4"
+                Padding="0 0 3 10"
+                FontSize="30"
+                BorderThickness="0"
+                Margin="2">7
+                <Button.Background>
+                    <SolidColorBrush>
+                        <SolidColorBrush.Color>
+                            <Color>
+                                <Color.A>250</Color.A>
+                                <Color.R>250</Color.R>
+                                <Color.G>250</Color.G>
+                                <Color.B>250</Color.B>
+                            </Color>
+                        </SolidColorBrush.Color>
+                    </SolidColorBrush>
+                </Button.Background>
+            </Button>
+
+            <Button 
+                Click="ButtonNumber_Click"
+                Grid.Row="4"
+                Grid.Column="1"
+                Padding="0 0 3 10"
+                FontSize="30"
+                BorderThickness="0"
+                Margin="2">8
+                <Button.Background>
+                    <SolidColorBrush>
+                        <SolidColorBrush.Color>
+                            <Color>
+                                <Color.A>250</Color.A>
+                                <Color.R>250</Color.R>
+                                <Color.G>250</Color.G>
+                                <Color.B>250</Color.B>
+                            </Color>
+                        </SolidColorBrush.Color>
+                    </SolidColorBrush>
+                </Button.Background>
+            </Button>
+
+            <Button 
+                Click="ButtonNumber_Click"
+                Grid.Row="4"
+                Grid.Column="2"
+                Padding="0 0 3 10"
+                FontSize="30"
+                BorderThickness="0"
+                Margin="2">9
+                <Button.Background>
+                    <SolidColorBrush>
+                        <SolidColorBrush.Color>
+                            <Color>
+                                <Color.A>250</Color.A>
+                                <Color.R>250</Color.R>
+                                <Color.G>250</Color.G>
+                                <Color.B>250</Color.B>
+                            </Color>
+                        </SolidColorBrush.Color>
+                    </SolidColorBrush>
+                </Button.Background>
+            </Button>
+
+            <Button 
+                Click="ButtonSymbol_Click"
+                Grid.Row="4"
+                Grid.Column="3"
+                Padding="0 0 3 10"
+                FontSize="40"
+                BorderThickness="0"
+                Margin="2">+
+                <Button.Background>
+                    <SolidColorBrush>
+                        <SolidColorBrush.Color>
+                            <Color>
+                                <Color.A>225</Color.A>
+                                <Color.R>225</Color.R>
+                                <Color.G>225</Color.G>
+                                <Color.B>225</Color.B>
+                            </Color>
+                        </SolidColorBrush.Color>
+                    </SolidColorBrush>
+                </Button.Background>
+            </Button>
+
+            <Button 
+                Click="ButtonOperation_Click"
+                Grid.Row="5"
+                Padding="0 0 3 10"
+                FontSize="40"
+                BorderThickness="0"
+                Margin="2">+/-
+                <Button.Background>
+                    <SolidColorBrush>
+                        <SolidColorBrush.Color>
+                            <Color>
+                                <Color.A>250</Color.A>
+                                <Color.R>250</Color.R>
+                                <Color.G>250</Color.G>
+                                <Color.B>250</Color.B>
+                            </Color>
+                        </SolidColorBrush.Color>
+                    </SolidColorBrush>
+                </Button.Background>
+            </Button>
+
+            <Button 
+                Click="ButtonNumber_Click"
+                Grid.Row="5"
+                Grid.Column="1"
+                Padding="0 0 3 10"
+                FontSize="30"
+                BorderThickness="0"
+                Margin="2">0
+                <Button.Background>
+                    <SolidColorBrush>
+                        <SolidColorBrush.Color>
+                            <Color>
+                                <Color.A>250</Color.A>
+                                <Color.R>250</Color.R>
+                                <Color.G>250</Color.G>
+                                <Color.B>250</Color.B>
+                            </Color>
+                        </SolidColorBrush.Color>
+                    </SolidColorBrush>
+                </Button.Background>
+            </Button>
+
+            <Button 
+                Click="ButtonSymbol_Click"
+                Grid.Row="5"
+                Grid.Column="2"
+                Padding="0 0 3 10"
+                FontSize="40"
+                BorderThickness="0"
+                Margin="2">.
+                <Button.Background>
+                    <SolidColorBrush>
+                        <SolidColorBrush.Color>
+                            <Color>
+                                <Color.A>250</Color.A>
+                                <Color.R>250</Color.R>
+                                <Color.G>250</Color.G>
+                                <Color.B>250</Color.B>
+                            </Color>
+                        </SolidColorBrush.Color>
+                    </SolidColorBrush>
+                </Button.Background>
+            </Button>
+
+            <Button 
+                Click="ButtonResult_Click"
+                Grid.Row="5"
+                Grid.Column="3"
+                Padding="0 0 3 10"
+                FontSize="40"
+                BorderThickness="0"
+                Margin="2">=
+                <Button.Background>
+                    <SolidColorBrush>
+                        <SolidColorBrush.Color>
+                            <Color>Tomato                              
+                            </Color>
+                        </SolidColorBrush.Color>
+                    </SolidColorBrush>
+                </Button.Background>
+            </Button>
+
         </Grid>
+
     </Grid>
 </Window>

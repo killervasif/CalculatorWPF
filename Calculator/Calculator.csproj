@@ -7,4 +7,16 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="delete.png" />
+    <None Remove="hamburger.png" />
+    <None Remove="history.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="delete.png" />
+    <Resource Include="hamburger.png" />
+    <Resource Include="history.png" />
+  </ItemGroup>
+
 </Project>
